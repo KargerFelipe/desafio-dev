@@ -25,4 +25,4 @@ Aplicação criada em PHP(Laravel) + Vuejs
 - `sudo docker-compose up -d app`
 - `sudo docker-compose run --rm npm run dev`
 
-# Depois de feito isso, a aplicação deverá estar rodando no localhost porta 80
+# Depois de feito isso, a aplicação deverá estar rodando em localhost:80
