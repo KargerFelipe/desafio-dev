@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOperacaoRequest;
 use App\Http\Requests\UpdateOperacaoRequest;
+use App\Http\Resources\Loja\ListaOperacao;
 use App\Models\Operacao;
 use App\Models\Loja;
 
@@ -16,9 +17,11 @@ class OperacaoController extends Controller
      */
     public function index()
     {
-        $operacoesPorLoja = Loja::with("operacoes")->get();
-
-        return response()->json($operacoesPorLoja);
+        return response()->json(
+            ListaOperacao::collection(
+                Loja::with("operacoes")->get()
+            )
+        );
     }
 
     /**

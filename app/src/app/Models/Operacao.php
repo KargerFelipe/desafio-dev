@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Operacao extends Model
 {
@@ -21,6 +22,18 @@ class Operacao extends Model
     ];
 
     protected $table = "operacao";
+
+    /**
+     * Cast tipo column to int
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function tipo(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) => intval($value),
+        );
+    }
 
     /**
      *

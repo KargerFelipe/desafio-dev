@@ -4,7 +4,18 @@
             striped
             hover
             dark
+            :fields="fields"
             :items="operacoes">
+
+            <template #cell(operacoes)="data">
+                <b-table
+                    striped
+                    hover
+                    dark
+                    :items="data.item.operacoes">
+                </b-table>
+            </template>
+
         </b-table>
     </div>
 </template>
@@ -13,6 +24,12 @@
 export default {
     data(){
         return {
+            fields: [
+                { key: 'nomeLoja', label: 'Loja' },
+                { key: 'proprietario', label: 'Proprietário' },
+                { key: 'operacoes', label: 'Operações' },
+                { key: 'total', label: 'Total' },
+            ],
             operacoes: []
         }
     },
@@ -31,6 +48,12 @@ export default {
     mounted(){
         const self = this
         self.listaOperacoes()
+
+        this.$root.$on(
+            'cnabImportado', () => {
+                self.listaOperacoes()
+            }
+        )
     }
 }
 </script>

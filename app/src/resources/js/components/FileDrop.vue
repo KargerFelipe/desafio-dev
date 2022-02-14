@@ -42,6 +42,12 @@ export default {
                     }
                 }
             )
+            .catch((error) => {
+                console.error(error)
+            })
+            .finally(() => {
+                self.$root.$emit('cnabImportado')
+            })
         }
     }
 };
