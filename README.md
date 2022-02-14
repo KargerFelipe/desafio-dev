@@ -22,8 +22,7 @@ Aplicação criada em PHP(Laravel) + Vuejs
 - `sudo docker-compose run --rm composer update`
 - `sudo docker-compose run --rm artisan migrate`
 - `sudo docker-compose run --rm npm install`
-- `sudo docker-compose run --rm npm run dev`
-- `docker-compose run --rm --service-ports npm run watch`
+- `sudo docker-compose run --rm npm run dev` ou `docker-compose run --rm --service-ports npm run watch`
 
 
 Obs: sudo não necessário dependendo da forma que vc tem o docker instalado
