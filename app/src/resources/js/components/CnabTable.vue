@@ -49,7 +49,7 @@ export default {
         const self = this
         self.listaOperacoes()
 
-        this.$root.$on(
+        self.$root.$on(
             'cnabImportado', () => {
                 self.listaOperacoes()
             }
