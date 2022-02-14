@@ -22,7 +22,7 @@ Aplicação criada em PHP(Laravel) + Vuejs
 - `sudo docker-compose run --rm composer update`
 - `sudo docker-compose run --rm artisan migrate`
 - `sudo docker-compose run --rm npm install`
-- `sudo docker-compose up -d app`
 - `sudo docker-compose run --rm npm run dev`
+Obs: sudo não necessário dependendo da forma que vc tem o docker instalado
 
 # Depois de feito isso, a aplicação deverá estar rodando em localhost:80
