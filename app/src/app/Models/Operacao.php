@@ -79,7 +79,7 @@ class Operacao extends Model
                     [
                         "tipo" => Str::substr($linha, 0, 1),
                         "data" => "$data $hora",
-                        "valor" => Str::substr($linha, 9, 10),
+                        "valor" => intval(Str::substr($linha, 9, 10))/100,
                         "cpf" => Str::substr($linha, 19, 11),
                         "cartao" => Str::substr($linha, 30, 12),
                         "proprietario" => Str::substr($linha, 48, 14),
